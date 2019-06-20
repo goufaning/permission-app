@@ -17,6 +17,9 @@
 </template>
 
 <script>
+import mock from '../mock/index.js';
+import Cookies from "js-cookie";
+import router from '../router'
 export default {
     name: 'Login',
     data() {
@@ -41,6 +44,8 @@ export default {
       login() {
         let userInfo = {account:this.loginForm.account, password:this.loginForm.password}
         this.$api.login(JSON.stringify(userInfo)).then((res) => {
+            Cookies.set('token', res.data.token) // 放置token到Cookie
+            sessionStorage.setItem('user', userInfo.account) // 保存用户到本地会话
             this.$router.push('/')  // 登录成功，跳转到主页
           }).catch(function(res) {
             alert(res);
@@ -60,7 +65,7 @@ export default {
     border-radius: 5px;
     -moz-border-radius: 5px;
     background-clip: padding-box;
-    margin: 180px auto;
+    margin: 140px auto;
     width: 350px;
     padding: 35px 35px 15px 35px;
     background: #fff;
