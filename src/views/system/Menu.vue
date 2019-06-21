@@ -1,44 +1,61 @@
 <template>
-  <div class="container">
-    <el-breadcrumb separator="/" class="breadcrumb">
-      <el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
-        <a href="www.baidu.com">{{ item.name }}</a>
-      </el-breadcrumb-item>
-    </el-breadcrumb>
-    <transition name="fade" mode="out-in">
-      <router-view></router-view>
-    </transition>
+  <div class="site-wrapper site-page--not-found">
+    <div class="site-content__wrapper">
+      <div class="site-content">
+        <h2 class="not-found-title">菜单管理</h2>
+        <p class="not-found-desc">这是主页面 ...</p>
+        <el-button @click="$router.go(-1)">返回上一页</el-button>
+        <el-button type="primary" class="not-found-btn-gohome" @click="$router.push({ name: 'home' })">进入首页</el-button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-    };
-  },
-  methods: {
-
-  },
-  mounted() {
-
+  export default {
   }
-};
 </script>
 
-<style scoped lang="scss">
-.container {
-  position: absolute;
-  top: 60px;
-  bottom: 0px;
-  left: 200px;
-  right: 0px;
-  .breadcrumb {
-    padding: 10px;  
-    border-color: rgba(38, 86, 114, 0.2);
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    background: rgba(138, 158, 170, 0.2);
+<style lang="scss">
+  .site-wrapper.site-page--not-found {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    .site-content__wrapper {
+      padding: 0;
+      margin: 0;
+      background-color: #fff;
+    }
+    .site-content {
+      position: fixed;
+      top: 15%;
+      left: 50%;
+      z-index: 2;
+      padding: 30px;
+      text-align: center;
+      transform: translate(-50%, 0);
+    }
+    .not-found-title {
+      margin: 20px 0 15px;
+      font-size: 8em;
+      font-weight: 500;
+      color: rgb(55, 71, 79);
+    }
+    .not-found-desc {
+      margin: 0 0 30px;
+      font-size: 26px;
+      text-transform: uppercase;
+      color: rgb(118, 131, 143);
+      > em {
+        font-style: normal;
+        color: #ee8145;
+      }
+    }
+    .not-found-btn-gohome {
+      margin-left: 30px;
+    }
   }
-}
-</style>
+</style>s
