@@ -1,23 +1,23 @@
 <template>
   <div class="container">
       <!-- 导航菜单栏 -->
-      <MenuBar></MenuBar>
+      <nav-bar></nav-bar>
       <!-- 头部区域 -->
-      <HeadBar></HeadBar>
+      <head-bar></head-bar>
       <!-- 主内容区域 -->
-      <Main></Main>
+      <main-content></main-content>
   </div>
 </template>
 
 <script>
-import HeadBar from "../components/HeaderBar"
-import MenuBar from "../components/MenuBar"
-import Main from "../components/Main"
+import HeadBar from "./HeadBar/HeadBar"
+import NavBar from "./NavBar/NavBar"
+import MainContent from "./MainContent/MainContent"
 export default {
   components:{
         HeadBar,
-        MenuBar,
-        Main
+        NavBar,
+        MainContent
   }
 };
 </script>
@@ -28,6 +28,7 @@ export default {
     top: 0px;
     left: 0px;
     right: 0px;
-    background: #4b5f6e;
+    bottom: 0px;
+    // background: rgba(224, 234, 235, 0.1);
   }
-</style>
+</style>  
