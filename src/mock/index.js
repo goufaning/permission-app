@@ -13,7 +13,7 @@ import * as log from './modules/log'
 // 3. 开启/关闭[业务模块中某个请求]拦截, 通过函数返回对象中的[isOpen属性]设置.
 let openMock = true
 // let openMock = false
-fnCreate(login, false)s
+fnCreate(login, false)
 fnCreate(user, openMock)
 fnCreate(role, openMock)
 fnCreate(dept, openMock)

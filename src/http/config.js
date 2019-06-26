@@ -4,7 +4,7 @@ import { baseUrl } from '@/utils/global'
 export default {
   method: 'get',
   // 基础url前缀
-  baseUrl: baseUrl + "/api",
+  baseUrl: baseUrl,
   // 请求头信息
   headers: {
     'Content-Type': 'application/json;charset=UTF-8'

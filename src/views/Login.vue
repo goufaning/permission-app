@@ -74,9 +74,9 @@ export default {
   methods: {
     login() {
       this.loading = true
-      let userInfo = {account:this.loginForm.account, password:this.loginForm.password, captcha:this.loginForm.captcha}
+      let userInfo = {username:this.loginForm.account, password:this.loginForm.password}
       this.$api.login.login(userInfo).then((res) => {
-          if(res.msg != null) {
+          if(res.code != 200) {
             this.$message({
               message: res.msg,
               type: 'error'
