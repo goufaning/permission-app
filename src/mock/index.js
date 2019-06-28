@@ -14,10 +14,10 @@ import * as log from './modules/log'
 let openMock = true
 // let openMock = false
 fnCreate(login, false)
-fnCreate(user, openMock)
+fnCreate(user, false)
 fnCreate(role, openMock)
-fnCreate(dept, openMock)
-fnCreate(menu, openMock)
+fnCreate(dept, false)
+fnCreate(menu, false)
 fnCreate(dict, openMock)
 fnCreate(log, openMock)
 

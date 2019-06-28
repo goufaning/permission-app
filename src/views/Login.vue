@@ -52,7 +52,7 @@ export default {
       loading: false,
       loginForm: {
         account: 'admin',
-        password: 'admin',
+        password: '123456',
         captcha:'',
         src: ''
       },
@@ -74,7 +74,7 @@ export default {
   methods: {
     login() {
       this.loading = true
-      let userInfo = {username:this.loginForm.account, password:this.loginForm.password}
+      let userInfo = {name:this.loginForm.account, password:this.loginForm.password}
       this.$api.login.login(userInfo).then((res) => {
           if(res.code != 200) {
             this.$message({
@@ -83,7 +83,8 @@ export default {
             })
           } else {
             Cookies.set('token', res.data.token) // 放置token到Cookie
-            sessionStorage.setItem('user', userInfo.account) // 保存用户到本地会话
+            sessionStorage.setItem('user', userInfo.name) // 保存用户到本地会话
+            let userName = sessionStorage.getItem('user')
             this.$store.commit('menuRouteLoaded', false) // 要求重新加载导航菜单
             this.$router.push('/')  // 登录成功，跳转到主页
           }
@@ -96,7 +97,7 @@ export default {
         });
     },
     refreshCaptcha: function(){
-      this.loginForm.src = this.global.baseUrl + "/captcha.jpg?t=" + new Date().getTime();
+      // this.loginForm.src = this.global.baseUrl + "/captcha.jpg?t=" + new Date().getTime();
     },
     reset() {
       this.$refs.loginForm.resetFields()
