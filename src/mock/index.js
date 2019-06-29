@@ -15,11 +15,11 @@ let openMock = true
 // let openMock = false
 fnCreate(login, false)
 fnCreate(user, false)
-fnCreate(role, openMock)
+fnCreate(role, false)
 fnCreate(dept, false)
 fnCreate(menu, false)
-fnCreate(dict, openMock)
-fnCreate(log, openMock)
+fnCreate(dict, false)
+fnCreate(log, true)
 
 /**
  * 创建mock模拟数据
