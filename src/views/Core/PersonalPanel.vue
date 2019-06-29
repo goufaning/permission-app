@@ -34,29 +34,19 @@
         <div class="other-operation-item">
           <li class="fa fa-bell"></li>
           访问次数
-        </div>    
-        <div class="other-operation-item" @click="showBackupDialog">
-          <li class="fa fa-undo"></li>
-          {{$t("common.backupRestore")}}
-        </div>    
+        </div>        
     </div>
     <div class="personal-footer" @click="logout">
       <li class="fa fa-sign-out"></li>
       {{$t("common.logout")}}
     </div>
-    <!--备份还原界面-->
-    <backup ref="backupDialog" @afterRestore="afterRestore"></backup>
   </div>
 </template>
 
 <script>
 import Cookies from "js-cookie"
-import Backup from "@/views/Backup/Backup"
 export default {
   name: 'PersonalPanel',
-  components:{
-    Backup
-  },
   props: {
     user: {
       type: Object,
@@ -93,19 +83,9 @@ export default {
         Cookies.remove(name)
     },
     // 打开备份还原界面
-    showBackupDialog: function() {
-      this.$refs.backupDialog.setBackupVisible(true)
-    },
+
     // 成功还原之后，重新登录
-    afterRestore: function() {
-        this.$refs.backupDialog.setBackupVisible(false)
-        sessionStorage.removeItem("user")
-        this.deleteCookie("token")
-        this.$router.push("/login")
-        this.$api.login.logout().then((res) => {
-          }).catch(function(res) {
-        })
-    }
+    
   },
   mounted() {
   }
