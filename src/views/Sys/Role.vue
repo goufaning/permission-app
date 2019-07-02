@@ -174,7 +174,7 @@ export default {
 		// 获取数据
 		findTreeData: function () {
 			this.menuLoading = true
-			this.$api.menu.findMenuTree().then((res) => {
+			this.$api.menu.findMenuTree({'name':''}).then((res) => {
 				this.menuData = res.data
 				this.menuLoading = false
 			})

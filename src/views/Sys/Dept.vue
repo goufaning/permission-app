@@ -15,13 +15,13 @@
 		</el-form>
 	</div>
 	<!--表格树内容栏-->
-    <el-table :data="tableTreeDdata" stripe size="mini" style="width: 100%;"
+    <el-table :data="tableTreeDdata" stripe size="mini" style="width: 100%;" default-expand-all
       rowKey="id" v-loading="loading" element-loading-text="$t('action.loading')">
-      <el-table-column
-        prop="id" header-align="center" align="center" width="80" label="ID">
-      </el-table-column>
+      <!-- <el-table-column
+        prop="id" header-align="center" align="center" width="100" label="ID">
+      </el-table-column> -->
       <table-tree-column 
-        prop="name" header-align="center" treeKey="id" width="150" label="名称">
+        prop="name" header-align="center" treeKey="id" width="180" label="名称">
       </table-tree-column>
       <el-table-column 
         prop="parentName" header-align="center" align="center" width="120" label="上级机构">
@@ -88,6 +88,7 @@ export default {
 			filters: {
 				name: ''
       },
+      pageRequest: {},
       tableTreeDdata: [],
       dialogVisible: false,
       dataForm: {
@@ -116,7 +117,7 @@ export default {
 		// 获取数据
     findTreeData: function () {
       this.loading = true
-			this.$api.dept.findDeptTree().then((res) => {
+			this.$api.dept.findDeptTree({'name':this.filters.name}).then((res) => {
         this.tableTreeDdata = res.data
         this.popupTreeData = this.getParentMenuTree(res.data)
         this.loading = false

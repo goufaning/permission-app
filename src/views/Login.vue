@@ -82,7 +82,7 @@ export default {
               type: 'error'
             })
           } else {
-            Cookies.set('token', res.data.token) // 放置token到Cookie
+            sessionStorage.setItem('token', res.data.token) // 放置token到Cookie
             sessionStorage.setItem('user', userInfo.name) // 保存用户到本地会话
             let userName = sessionStorage.getItem('user')
             this.$store.commit('menuRouteLoaded', false) // 要求重新加载导航菜单

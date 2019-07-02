@@ -22,20 +22,6 @@
           <el-button size="small" icon="fa fa-key"> 修改密码</el-button>
         </span>    
     </div>
-    <div class="other-operation">
-        <div class="other-operation-item">
-          <li class="fa fa-eraser"></li>
-          清除缓存
-        </div>    
-        <div class="other-operation-item">
-          <li class="fa fa-user"></li>
-          在线人数
-        </div>    
-        <div class="other-operation-item">
-          <li class="fa fa-bell"></li>
-          访问次数
-        </div>        
-    </div>
     <div class="personal-footer" @click="logout">
       <li class="fa fa-sign-out"></li>
       {{$t("common.logout")}}
