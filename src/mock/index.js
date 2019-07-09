@@ -19,7 +19,7 @@ fnCreate(role, false)
 fnCreate(dept, false)
 fnCreate(menu, false)
 fnCreate(dict, false)
-fnCreate(log, true)
+fnCreate(log, false)
 
 /**
  * 创建mock模拟数据

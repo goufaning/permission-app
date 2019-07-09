@@ -2,18 +2,20 @@
   <div class="page-container" style="width:99%;margin-top:15px;">
     <el-row>
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
-        <el-card class="carousel-item-func">
-          <h2>功能计划</h2>
+        <el-card>
+          <div slot="header" class="clearfix">
+            <span>主要功能</span>
+          </div>
           <ul>
-            <li>✔ 系统登录：系统用户登录，系统登录认证（token方式）</li>
-            <li>✔ 用户管理：新建用户，修改用户，删除用户，查询用户</li>
-            <li>✔ 机构管理：新建机构，修改机构，删除机构，查询机构</li>
-            <li>✔ 角色管理：新建角色，修改角色，删除角色，查询角色</li>
-            <li>✔ 菜单管理：新建菜单，修改菜单，删除菜单，查询菜单</li>
-            <li>✔ 系统日志：记录用户操作日志，查看系统执行日志记录</li>
-            <li>✔ 聚合文档：定制在线文档，提供简洁美观的API文档</li>
-            <li>✔ 主题切换：支持主题切换，自定主题颜色，一键换肤</li>
-            <li>✔ 服务监控：集成Spring Boot Admin，实现微服务监控</li>
+            <li>系统登录：系统用户登录，系统登录认证（token方式）</li>
+            <li>用户管理：新建用户，修改用户，删除用户，查询用户</li>
+            <li>机构管理：新建机构，修改机构，删除机构，查询机构</li>
+            <li>角色管理：新建角色，修改角色，删除角色，查询角色</li>
+            <li>菜单管理：新建菜单，修改菜单，删除菜单，查询菜单</li>
+            <li>系统日志：记录用户操作日志，查看系统执行日志记录</li>
+            <li>聚合文档：定制在线文档，提供简洁美观的API文档</li>
+            <li>主题切换：支持主题切换，自定主题颜色，一键换肤</li>
+            <li>服务监控：集成Spring Boot Admin，实现微服务监控</li>
             <li>...</li>
           </ul>
         </el-card>
@@ -21,8 +23,10 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
         <el-row>
           <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-            <el-card class="carousel-item-env">
-              <h2>开发环境</h2>
+            <el-card>
+              <div slot="header" class="clearfix">
+                <span>版本信息</span>
+              </div>
               <ul>
                 <li>IDE : eclipse 4.6.x。 JDK : JDK 1.8.x。</li>
                 <li>Maven : Maven 3.5.x。 MySQL: MySQL 5.7.x。</li>
@@ -32,8 +36,10 @@
             </el-card>
           </el-col>
           <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-            <el-card class="carousel-item-env">
-              <h2>技术选型</h2>
+            <el-card>
+              <div slot="header" class="clearfix">
+                <span>功能计划</span>
+              </div>
               <ul>
                 <li>核心框架：Spring Boot 2.x。 服务治理：Spring Cloud。</li>
                 <li>视图框架：Spring MVC 5.x。 持久层框架：MyBatis 3.x。</li>

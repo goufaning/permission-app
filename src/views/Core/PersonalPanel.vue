@@ -56,7 +56,7 @@ export default {
       })
       .then(() => {
         sessionStorage.removeItem("user")
-        this.deleteCookie("token")
+        sessionStorage.removeItem("token")
         this.$router.push("/login")
         this.$api.login.logout().then((res) => {
           }).catch(function(res) {

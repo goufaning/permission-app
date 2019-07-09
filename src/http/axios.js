@@ -1,6 +1,5 @@
 import axios from 'axios';
 import config from './config';
-import Cookies from "js-cookie";
 import router from '@/router'
 
 // 使用vuex做全局loading时使用
@@ -12,6 +11,7 @@ export default function $axios(options) {
       baseURL: config.baseUrl,
       headers: config.headers,
       timeout: config.timeout,
+      // 想要withCredentials生效必须关闭mockjs  mockjs会将withCredentials设置为false
       withCredentials: config.withCredentials
     })
 
@@ -104,6 +104,8 @@ export default function $axios(options) {
               break
             case 401:
               err.message = '未授权，请登录'
+              sessionStorage.removeItem('token')
+              router.push( `/login`)
               break
             case 403:
               err.message = '拒绝访问'

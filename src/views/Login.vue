@@ -63,10 +63,10 @@ export default {
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' }
         ]
-        // ,
-        // captcha: [
-        //   { required: true, message: '请输入验证码', trigger: 'blur' }
-        // ]
+        ,
+        captcha: [
+          { required: true, message: '请输入验证码', trigger: 'blur' }
+        ]
       },
       checked: true
     }
@@ -74,7 +74,7 @@ export default {
   methods: {
     login() {
       this.loading = true
-      let userInfo = {name:this.loginForm.account, password:this.loginForm.password}
+      let userInfo = {name:this.loginForm.account, password:this.loginForm.password, captcha:this.loginForm.captcha}
       this.$api.login.login(userInfo).then((res) => {
           if(res.code != 200) {
             this.$message({
@@ -97,7 +97,7 @@ export default {
         });
     },
     refreshCaptcha: function(){
-      // this.loginForm.src = this.global.baseUrl + "/captcha.jpg?t=" + new Date().getTime();
+      this.loginForm.src = this.global.baseUrl + "/captcha.jpg?t=" + new Date().getTime();
     },
     reset() {
       this.$refs.loginForm.resetFields()

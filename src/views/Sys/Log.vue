@@ -36,7 +36,7 @@ export default {
 			columns: [
 				{prop:"id", label:"ID", minWidth:60},
 				{prop:"userName", label:"用户名", minWidth:100},
-				// {prop:"operation", label:"操作", minWidth:120},
+				{prop:"operation", label:"操作", minWidth:120},
 				{prop:"method", label:"方法", minWidth:180},
 				{prop:"params", label:"参数", minWidth:220},
 				{prop:"ip", label:"IP", minWidth:120},
