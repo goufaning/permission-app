@@ -1,6 +1,13 @@
 <template>
   <div class="page-container" style="width:99%;margin-top:15px;">
     <el-row>
+      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+        <el-card>
+          
+        </el-card>
+      </el-col>
+    </el-row>
+    <el-row>
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
         <el-card>
           <div slot="header" class="clearfix">
@@ -15,41 +22,23 @@
             <li>系统日志：记录用户操作日志，查看系统执行日志记录</li>
             <li>聚合文档：定制在线文档，提供简洁美观的API文档</li>
             <li>主题切换：支持主题切换，自定主题颜色，一键换肤</li>
-            <li>服务监控：集成Spring Boot Admin，实现微服务监控</li>
             <li>...</li>
           </ul>
         </el-card>
       </el-col>
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
-        <el-row>
-          <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-            <el-card>
-              <div slot="header" class="clearfix">
-                <span>版本信息</span>
-              </div>
-              <ul>
-                <li>IDE : eclipse 4.6.x。 JDK : JDK 1.8.x。</li>
-                <li>Maven : Maven 3.5.x。 MySQL: MySQL 5.7.x。</li>
-                <li>IDE : VS Code 1.27。 Webpack：webpack 3.2.x。</li>
-                <li>NODE: Node 8.9.x。 NPM : NPM 6.4.x。</li>
-              </ul>
-            </el-card>
-          </el-col>
-          <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-            <el-card>
-              <div slot="header" class="clearfix">
-                <span>功能计划</span>
-              </div>
-              <ul>
-                <li>核心框架：Spring Boot 2.x。 服务治理：Spring Cloud。</li>
-                <li>视图框架：Spring MVC 5.x。 持久层框架：MyBatis 3.x。</li>
-                <li>数据库连接池：Druid 1.x。 安全框架：Shiro 1.4.x。</li>
-                <li>前端框架：Vue.js 2.x。 页面组件：Element 2.x。</li>
-                <li>状态管理：Vuex.js 2.x。 后台交互：axios 0.18.x。</li>
-              </ul>
-            </el-card>
-          </el-col>
-        </el-row>
+        <el-card>
+          <div slot="header" class="clearfix">
+            <span>功能计划</span>
+          </div>
+          <ul>
+            <li>核心框架：Spring Boot 2.x。 服务治理：Spring Cloud。</li>
+            <li>视图框架：Spring MVC 5.x。 持久层框架：MyBatis 3.x。</li>
+            <li>数据库连接池：Druid 1.x。 安全框架：Shiro 1.4.x。</li>
+            <li>前端框架：Vue.js 2.x。 页面组件：Element 2.x。</li>
+            <li>状态管理：Vuex.js 2.x。 后台交互：axios 0.18.x。</li>
+          </ul>
+        </el-card>
       </el-col>
     </el-row>
   </div>
