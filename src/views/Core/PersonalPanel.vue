@@ -68,9 +68,6 @@ export default {
     deleteCookie: function(name) { 
         Cookies.remove(name)
     },
-    // 打开备份还原界面
-
-    // 成功还原之后，重新登录
     
   },
   mounted() {

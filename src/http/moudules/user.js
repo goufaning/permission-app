@@ -12,6 +12,13 @@ export const save = (data) => {
         data
     })
 }
+export const findByName = (params) => {
+    return axios({
+        url: '/user/findByName',
+        method: 'get',
+        params
+    })
+}
 // 删除
 export const batchDelete = (data) => {
     return axios({

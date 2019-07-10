@@ -81,7 +81,7 @@ export default {
     }
   },
   mounted() {
-    this.sysName = "Kitty Platform"
+    this.sysName = "权限管理系统"
     var user = sessionStorage.getItem("user")
     if (user) {
       this.user.name = user
